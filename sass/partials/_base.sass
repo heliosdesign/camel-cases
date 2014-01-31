@@ -1,0 +1,56 @@
+/* =HTML
+/*---------------------------------------------*/
+
+body
+  font-size: 1em
+  font-family: $font-default
+  font-weight: 300
+
+  @include breakpoint(small)
+    font-size: 0.8em
+
+  @include breakpoint(medium)
+    font-family: $font-body
+    font-weight: normal
+  
+
+h1, h2, h3
+  color: $secondary
+  font-family: $font-small-headline
+  font-weight: bold
+
+  @include breakpoint(medium)
+    font-family: $font-headline
+    font-weight: 900
+
+  a
+    text-decoration: none
+    color: inherit
+
+p
+  color: $text
+  font-size: 1.3em
+  line-height: 1.6em
+
+a
+  &:link
+    color: $accent
+
+  &:visited
+    color: $secondary
+
+  &:hover
+    text-decoration: none
+
+img
+  height: auto
+  max-width: 100%
+
+code
+  background: lighten($borders, 11%)
+  border: 1px solid $borders
+  font-family: $font-code
+  font-size: 0.7em
+  padding: 2px 4px
+  @include border-radius(4px)
+  white-space: pre

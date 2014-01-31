@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  Detect Media Queries in JavaScript |  Camel Cases</title>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:900' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="wrapper">
+    <h1 class="branding"><img src="/assets/svg/logo.svg" alt="Camel Cases"></h1>
+    <nav class="main-nav" role="navigation">
+      <ul>
+        <li class=""><a href="/">Articles</a></li>
+        <li class=""><a href="/snippets">Snippets</a></li>
+        <li class=""><a href="/about">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="site-content">
+  <div class="wrapper">
+    <article class="post cat-articles">
+  <header class="post-header">
+    <h1 class="post-title">Detect Media Queries in JavaScript</h1>
+
+    <div class="post-meta">
+  <p class="publish-date">
+    Published: <span class="date">March 19, 2013</span>
+  </p>
+</div>
+  </header>
+  <section class="post-body">
+    <p>Don’t you just love resizing a page and seeing all your content re-shuffle itself into position? CSS media queries are awesome! For a while now I’ve been trying to find a consistant way to manipulate JavaScript based on the breakpoints defined in my CSS. On my search, I came across an article entitled <a href="http://seesparkbox.com/foundry/breakpoint_checking_in_javascript_with_css_user_values">Breakpoint Checking in Javascript with CSS User Values</a> by Andy Rossi. I took the basic ingredients found therein and went to the lab, testing out various solutions in different environments. The following is an explanation of the media query detection I’ve started working with in my projects.<!--more--></p>
+
+<ul>
+<li><a href="http://camelcas.es/demos/media-query-detection">View Demo</a></li>
+</ul>
+
+<p>Let’s start with the CSS. We’ll use the <code>content</code> property to name the media query.</p>
+<table class='highlighttable'><tr><td class='linenos'><div class='linenodiv'><pre><code class='css'>1
+2
+3
+4
+5
+6</code></pre></div></td><td class='code'><div class='highlight'><pre><span class='k'>@media</span> <span class='nt'>screen</span> <span class='nt'>and</span> <span class='o'>(</span><span class='nt'>min-width</span><span class='o'>:</span> <span class='nt'>31</span><span class='nc'>.25em</span><span class='o'>)</span> <span class='p'>{</span>
+  <span class='nt'>body</span><span class='nd'>:after</span> <span class='p'>{</span>
+    <span class='k'>content</span><span class='o'>:</span> <span class='s2'>&quot;medium&quot;</span><span class='p'>;</span>
+    <span class='k'>display</span><span class='o'>:</span> <span class='k'>none</span><span class='p'>;</span>
+  <span class='p'>}</span>
+<span class='p'>}</span>
+</pre></div>
+</td></tr></table>
+<p>You would create a rule like this for every breakpoint in the CSS document. I usually end up with <code>small</code>, <code>medium</code>, and <code>large</code> named media queries. Note that you don’t need to put the pseudo class on the <code>body</code> tag, but I like to use it instead of creating a new element in the markup.</p>
+
+<p>Next, the JavaScript. Let’s start by creating a function that will read and return the content value that we set in the CSS:</p>
+<table class='highlighttable'><tr><td class='linenos'><div class='linenodiv'><pre><code class='javascript'> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</code></pre></div></td><td class='code'><div class='highlight'><pre><span class='p'>(</span><span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
+  <span class='c1'>// Create the function that reads our media query;</span>
+  <span class='kd'>var</span> <span class='nx'>getMq</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>(){</span>
+    <span class='k'>if</span> <span class='p'>(</span><span class='o'>!</span><span class='nb'>window</span><span class='p'>.</span><span class='nx'>getComputedStyle</span><span class='p'>)</span> <span class='p'>{</span>
+      <span class='k'>return</span> <span class='s1'>&#39;large&#39;</span><span class='p'>;</span>
+    <span class='p'>}</span> <span class='k'>else</span> <span class='p'>{</span>
+      <span class='kd'>var</span> <span class='nx'>el</span> <span class='o'>=</span> <span class='nb'>document</span><span class='p'>.</span><span class='nx'>querySelector</span><span class='p'>(</span><span class='s1'>&#39;body&#39;</span><span class='p'>);</span>
+      <span class='kd'>var</span> <span class='nx'>mq</span> <span class='o'>=</span> <span class='nx'>getComputedStyle</span><span class='p'>(</span><span class='nx'>el</span><span class='p'>,</span> <span class='s1'>&#39;:after&#39;</span><span class='p'>).</span><span class='nx'>content</span><span class='p'>;</span>
+      <span class='nx'>mq</span> <span class='o'>=</span> <span class='nx'>mq</span><span class='p'>.</span><span class='nx'>replace</span><span class='p'>(</span><span class='sr'>/[&quot;&#39;]/g</span><span class='p'>,</span> <span class='s2'>&quot;&quot;</span><span class='p'>);</span>
+      <span class='k'>return</span> <span class='nx'>mq</span><span class='p'>;</span>
+    <span class='p'>}</span>
+  <span class='p'>}</span>
+<span class='p'>})();</span>
+</pre></div>
+</td></tr></table>
+<p>So what are we doing here? First we check to see that getComputedStyle is supported by the browser. Internet Explorer 8 and below doesn’t, so we want to return a default value instead of having it throw an error. If getComputedStyle is supported we use it to get the <code>content</code> value. Lastly, we make sure the string is consistant by taking out any quotation marks that some browsers (Firefox) include. Now that we have that function, we can get the our breakpoint whenever we need it. For example, on init:</p>
+<table class='highlighttable'><tr><td class='linenos'><div class='linenodiv'><pre><code class='javascript'> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</code></pre></div></td><td class='code'><div class='highlight'><pre><span class='p'>(</span><span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
+  
+  <span class='c1'>// Let&#39;s declare a variable to store our device size.</span>
+  <span class='kd'>var</span> <span class='nx'>deviceSize</span><span class='p'>;</span>
+  
+  <span class='c1'>// The function we made before.</span>
+  <span class='kd'>var</span> <span class='nx'>getMq</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>(){</span>
+    <span class='k'>if</span> <span class='p'>(</span><span class='o'>!</span><span class='nb'>window</span><span class='p'>.</span><span class='nx'>getComputedStyle</span><span class='p'>)</span> <span class='p'>{</span>
+      <span class='k'>return</span> <span class='s1'>&#39;large&#39;</span><span class='p'>;</span>
+    <span class='p'>}</span> <span class='k'>else</span> <span class='p'>{</span>
+      <span class='kd'>var</span> <span class='nx'>el</span> <span class='o'>=</span> <span class='nb'>document</span><span class='p'>.</span><span class='nx'>querySelector</span><span class='p'>(</span><span class='s1'>&#39;body&#39;</span><span class='p'>);</span>
+      <span class='kd'>var</span> <span class='nx'>mq</span> <span class='o'>=</span> <span class='nx'>getComputedStyle</span><span class='p'>(</span><span class='nx'>el</span><span class='p'>,</span> <span class='s1'>&#39;:after&#39;</span><span class='p'>).</span><span class='nx'>content</span><span class='p'>;</span>
+      <span class='nx'>mq</span> <span class='o'>=</span> <span class='nx'>mq</span><span class='p'>.</span><span class='nx'>replace</span><span class='p'>(</span><span class='sr'>/[&quot;&#39;]/g</span><span class='p'>,</span> <span class='s2'>&quot;&quot;</span><span class='p'>);</span>
+      <span class='k'>return</span> <span class='nx'>mq</span><span class='p'>;</span>
+    <span class='p'>}</span>
+  <span class='p'>}</span>
+
+  <span class='kd'>function</span> <span class='nx'>init</span><span class='p'>()</span> <span class='p'>{</span>
+    <span class='k'>if</span> <span class='p'>(</span><span class='nx'>deviceSize</span> <span class='o'>===</span> <span class='s1'>&#39;small&#39;</span><span class='p'>)</span> <span class='p'>{</span>
+      <span class='c1'>// Initialize for small screens.</span>
+    <span class='p'>}</span> <span class='k'>else</span> <span class='p'>{</span>
+      <span class='c1'>// Initialize for medium and large.</span>
+    <span class='p'>}</span>
+  <span class='p'>}</span>
+
+  <span class='nb'>window</span><span class='p'>.</span><span class='nx'>onload</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
+    <span class='nx'>deviceSize</span> <span class='o'>=</span> <span class='nx'>getMq</span><span class='p'>();</span>
+    <span class='nx'>init</span><span class='p'>();</span>
+  <span class='p'>}</span>
+
+<span class='p'>})();</span>
+</pre></div>
+</td></tr></table>
+<p>Great! But what happens when the browser gets resized? I’m glad you asked. To finish things off let’s add a resize event.</p>
+<table class='highlighttable'><tr><td class='linenos'><div class='linenodiv'><pre><code class='javascript'> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</code></pre></div></td><td class='code'><div class='highlight'><pre><span class='p'>(</span><span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
+  
+  <span class='c1'>// Add the variable declaration &#39;t&#39; for our timeout.</span>
+  <span class='kd'>var</span> <span class='nx'>deviceSize</span><span class='p'>,</span> <span class='nx'>t</span><span class='p'>;</span>
+
+  <span class='kd'>var</span> <span class='nx'>getMq</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>(){</span>
+    <span class='k'>if</span> <span class='p'>(</span><span class='o'>!</span><span class='nb'>window</span><span class='p'>.</span><span class='nx'>getComputedStyle</span><span class='p'>)</span> <span class='p'>{</span>
+      <span class='k'>return</span> <span class='s1'>&#39;large&#39;</span><span class='p'>;</span>
+    <span class='p'>}</span> <span class='k'>else</span> <span class='p'>{</span>
+      <span class='kd'>var</span> <span class='nx'>el</span> <span class='o'>=</span> <span class='nb'>document</span><span class='p'>.</span><span class='nx'>querySelector</span><span class='p'>(</span><span class='s1'>&#39;body&#39;</span><span class='p'>);</span>
+      <span class='kd'>var</span> <span class='nx'>mq</span> <span class='o'>=</span> <span class='nx'>getComputedStyle</span><span class='p'>(</span><span class='nx'>el</span><span class='p'>,</span> <span class='s1'>&#39;:after&#39;</span><span class='p'>).</span><span class='nx'>content</span><span class='p'>;</span>
+      <span class='nx'>mq</span> <span class='o'>=</span> <span class='nx'>mq</span><span class='p'>.</span><span class='nx'>replace</span><span class='p'>(</span><span class='sr'>/[&quot;&#39;]/g</span><span class='p'>,</span> <span class='s2'>&quot;&quot;</span><span class='p'>);</span>
+      <span class='k'>return</span> <span class='nx'>mq</span><span class='p'>;</span>
+    <span class='p'>}</span>
+  <span class='p'>}</span>
+
+  <span class='kd'>function</span> <span class='nx'>init</span><span class='p'>()</span> <span class='p'>{</span>
+    <span class='k'>if</span> <span class='p'>(</span><span class='nx'>deviceSize</span> <span class='o'>===</span> <span class='s1'>&#39;small&#39;</span><span class='p'>)</span> <span class='p'>{</span>
+      <span class='c1'>// Initialize for small screens.</span>
+    <span class='p'>}</span> <span class='k'>else</span> <span class='p'>{</span>
+      <span class='c1'>// Initialize for medium and large.</span>
+    <span class='p'>}</span>
+  <span class='p'>}</span>
+
+  <span class='nb'>window</span><span class='p'>.</span><span class='nx'>onload</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
+    <span class='nx'>deviceSize</span> <span class='o'>=</span> <span class='nx'>getMq</span><span class='p'>();</span>
+    <span class='nx'>init</span><span class='p'>();</span>
+  <span class='p'>}</span>
+
+  <span class='nb'>window</span><span class='p'>.</span><span class='nx'>onresize</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>(){</span>
+    <span class='k'>if</span> <span class='p'>(</span><span class='nx'>t</span><span class='p'>)</span> <span class='p'>{</span> <span class='nx'>clearTimeout</span><span class='p'>(</span><span class='nx'>t</span><span class='p'>);</span> <span class='p'>}</span>
+    <span class='nx'>t</span> <span class='o'>=</span> <span class='nx'>setTimeout</span><span class='p'>(</span><span class='kd'>function</span><span class='p'>(){</span>
+      <span class='kd'>var</span> <span class='nx'>checkSize</span> <span class='o'>=</span> <span class='nx'>getMq</span><span class='p'>();</span>
+      <span class='k'>if</span> <span class='p'>(</span><span class='nx'>checkSize</span> <span class='o'>!==</span> <span class='nx'>deviceSize</span><span class='p'>)</span> <span class='p'>{</span>
+        <span class='nx'>deviceSize</span> <span class='o'>=</span> <span class='nx'>checkSize</span><span class='p'>;</span>
+        <span class='nx'>init</span><span class='p'>();</span>
+      <span class='p'>}</span>
+    <span class='p'>},</span> <span class='mi'>50</span><span class='p'>);</span>
+  <span class='p'>}</span>
+
+<span class='p'>})();</span>
+</pre></div>
+</td></tr></table>
+<p>As you can see, in our <code>onresize</code> function, we’re creating a timeout so that the code only get executed when the resize stops. When it does, we check to see if our media query is different and if it is we call the <code>init</code> function.</p>
+
+<p>And that’s that. Again, thanks to Rob Tarr and Andy Rossi for pointing me in the right direction.</p>
+
+<p>(Tested successfully in Chrome, Firefox, Opera, Safari, iOS and IE7+).</p>
+  </div>
+  <footer class="post-footer">
+  </footer>
+</article>
+
+  </div>
+</div>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+      <p class="copyright">&copy; <a href="http://dsundy.com">dsundy.com</a> 2014.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

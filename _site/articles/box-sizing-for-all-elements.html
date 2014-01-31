@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  Box-Sizing For All |  Camel Cases</title>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:900' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="wrapper">
+    <h1 class="branding"><img src="/assets/svg/logo.svg" alt="Camel Cases"></h1>
+    <nav class="main-nav" role="navigation">
+      <ul>
+        <li class=""><a href="/">Articles</a></li>
+        <li class=""><a href="/snippets">Snippets</a></li>
+        <li class=""><a href="/about">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="site-content">
+  <div class="wrapper">
+    <article class="post cat-articles">
+  <header class="post-header">
+    <h1 class="post-title">Box-Sizing For All</h1>
+
+    <div class="post-meta">
+  <p class="publish-date">
+    Published: <span class="date">March 6, 2013</span>
+  </p>
+</div>
+  </header>
+  <section class="post-body">
+    <p>Dealing with padding and borders can be tricky—especially when you’re working in a fluid layout (as you should be). Enter box-sizing, which adds borders and padding to the inside of the element.<!--more--> Here’s how to add the border-box box model to all elements on a page:</p>
+<table class='highlighttable'><tr><td class='linenos'><div class='linenodiv'><pre><code class='css'>1
+2
+3
+4
+5</code></pre></div></td><td class='code'><div class='highlight'><pre><span class='o'>*</span> <span class='p'>{</span> 
+  <span class='o'>-</span><span class='n'>moz</span><span class='o'>-</span><span class='n'>box</span><span class='o'>-</span><span class='n'>sizing</span><span class='o'>:</span> <span class='k'>border</span><span class='o'>-</span><span class='n'>box</span><span class='p'>;</span> 
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>box</span><span class='o'>-</span><span class='n'>sizing</span><span class='o'>:</span> <span class='k'>border</span><span class='o'>-</span><span class='n'>box</span><span class='p'>;</span> 
+  <span class='n'>box</span><span class='o'>-</span><span class='n'>sizing</span><span class='o'>:</span> <span class='k'>border</span><span class='o'>-</span><span class='n'>box</span><span class='p'>;</span> 
+<span class='p'>}</span>
+</pre></div>
+</td></tr></table>
+<p>Be careful when using the asterisk. It adds the specified CSS rules to everything which can be a bit performance heavy. I like to use SASS bring in border-box when I need it:</p>
+<table class='highlighttable'><tr><td class='linenos'><div class='linenodiv'><pre><code class='css'> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</code></pre></div></td><td class='code'><div class='highlight'><pre><span class='nc'>.boxy</span> <span class='p'>{</span>
+  <span class='o'>-</span><span class='n'>moz</span><span class='o'>-</span><span class='n'>box</span><span class='o'>-</span><span class='n'>sizing</span><span class='o'>:</span> <span class='k'>border</span><span class='o'>-</span><span class='n'>box</span><span class='p'>;</span> 
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>box</span><span class='o'>-</span><span class='n'>sizing</span><span class='o'>:</span> <span class='k'>border</span><span class='o'>-</span><span class='n'>box</span><span class='p'>;</span> 
+  <span class='n'>box</span><span class='o'>-</span><span class='n'>sizing</span><span class='o'>:</span> <span class='k'>border</span><span class='o'>-</span><span class='n'>box</span><span class='p'>;</span>
+<span class='p'>}</span>
+
+<span class='c'>/* Then pull it in where needed. */</span>
+<span class='nc'>.some-element</span> <span class='p'>{</span>
+  <span class='o'>@</span><span class='n'>extend</span> <span class='o'>.</span><span class='n'>boxy</span><span class='p'>;</span>
+<span class='p'>}</span>
+</pre></div>
+</td></tr></table>
+<p>Is this safe to use? <a href="http://paulirish.com/2012/box-sizing-border-box-ftw">Paul Irish says we can use it</a> and that’s good enough for me. Here’s the <a href="http://caniuse.com/#search=Box-sizing">caniuse.com compatibility chart</a> (hint: IE8+).</p>
+  </div>
+  <footer class="post-footer">
+  </footer>
+</article>
+
+  </div>
+</div>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+      <p class="copyright">&copy; <a href="http://dsundy.com">dsundy.com</a> 2014.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

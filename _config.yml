@@ -1,0 +1,6 @@
+source:      .
+destination: ./_site
+permalink: none
+excerpt_separator: <!--more-->
+exclude: ['__source', 'node_modules', 'bower_components', 'sass', 'gulpfile.js', 'package.json', 'README.md', 'type.html']
+include: ['.htaccess']

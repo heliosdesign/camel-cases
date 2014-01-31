@@ -1,0 +1,26 @@
+{
+  "name": "Standardize",
+  "main": [
+    "./standardize.sass",
+    "./standardize.scss"
+  ],
+  "ignore": [
+    ".gitignore",
+    "bower.json",
+    "package.json",
+    "Gruntfile.js",
+    "README.md"
+  ],
+  "dependencies": {},
+  "homepage": "https://github.com/dansundy/standardize",
+  "_release": "8361112f1e",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "8361112f1e11c23f9e047f436876f37f6c234d1a"
+  },
+  "_source": "git://github.com/dansundy/standardize.git",
+  "_target": "*",
+  "_originalSource": "standardize",
+  "_direct": true
+}

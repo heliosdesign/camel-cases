@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  CSS Text Shadows |  Camel Cases</title>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:900' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="wrapper">
+    <h1 class="branding"><img src="/assets/svg/logo.svg" alt="Camel Cases"></h1>
+    <nav class="main-nav" role="navigation">
+      <ul>
+        <li class=""><a href="/">Articles</a></li>
+        <li class=""><a href="/snippets">Snippets</a></li>
+        <li class=""><a href="/about">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="site-content">
+  <div class="wrapper">
+    <article class="post cat-snippets">
+  <header class="post-header">
+    <h1 class="post-title">CSS Text Shadows</h1>
+
+    <div class="post-meta">
+  <p class="publish-date">
+    Published: <span class="date">March 30, 2013</span>
+  </p>
+</div>
+  </header>
+  <section class="post-body">
+    <p>A single shadow:</p>
+<table class='highlighttable'><tr><td class='linenos'><div class='linenodiv'><pre><code class='css'>1
+2
+3</code></pre></div></td><td class='code'><div class='highlight'><pre><span class='nt'>element</span> <span class='p'>{</span> 
+	<span class='k'>text-shadow</span><span class='o'>:</span> <span class='m'>1px</span> <span class='m'>1px</span> <span class='m'>1px</span> <span class='n'>rgba</span><span class='p'>(</span><span class='m'>0</span><span class='o'>,</span> <span class='m'>0</span><span class='o'>,</span> <span class='m'>0</span><span class='o'>,</span> <span class='m'>0</span><span class='o'>.</span><span class='m'>5</span><span class='p'>);</span> 
+<span class='p'>}</span>
+</pre></div>
+</td></tr></table><!--more-->
+<p>Multiple shadows on one element:</p>
+<table class='highlighttable'><tr><td class='linenos'><div class='linenodiv'><pre><code class='css'>1
+2
+3</code></pre></div></td><td class='code'><div class='highlight'><pre><span class='nt'>element</span> <span class='p'>{</span> 
+	<span class='k'>text-shadow</span><span class='o'>:</span> <span class='m'>1px</span> <span class='m'>1px</span> <span class='m'>1px</span> <span class='n'>rgba</span><span class='p'>(</span><span class='m'>0</span><span class='o'>,</span> <span class='m'>0</span><span class='o'>,</span> <span class='m'>0</span><span class='o'>,</span> <span class='m'>0</span><span class='o'>.</span><span class='m'>5</span><span class='p'>)</span><span class='o'>,</span> <span class='m'>-1px</span> <span class='m'>-1px</span> <span class='m'>1px</span> <span class='n'>rgba</span><span class='p'>(</span><span class='m'>255</span><span class='o'>,</span> <span class='m'>255</span><span class='o'>,</span> <span class='m'>255</span><span class='o'>,</span> <span class='m'>0</span><span class='o'>.</span><span class='m'>5</span><span class='p'>);</span>
+<span class='p'>}</span>
+</pre></div>
+</td></tr></table>
+  </div>
+  <footer class="post-footer">
+  </footer>
+</article>
+
+  </div>
+</div>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+      <p class="copyright">&copy; <a href="http://dsundy.com">dsundy.com</a> 2014.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

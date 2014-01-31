@@ -1,0 +1,44 @@
+.branding
+  margin: 2em 0
+  text-align: center
+
+.main-nav
+  ul
+    border-bottom: 1px solid $borders
+    font-family: $font-small-headline
+    margin: 1em 0
+    padding: 0
+    text-align: center
+
+    @include breakpoint(medium)
+      font-family: $font-headline
+
+  li
+    display: inline-block
+    height: 55px
+    margin: 0 5%
+    min-width: 100px
+    width: 10%
+
+    @include box-sizing(border-box)
+
+    &.active
+      @include breakpoint(medium)
+        border-bottom: 5px solid $accent
+
+    &:hover
+      @include breakpoint(medium)
+        border-bottom: 5px solid $tertiary
+
+    @include breakpoint(small)
+      border-top: 1px solid $borders
+      margin: 0
+      width: 100%
+
+    a
+      color: $secondary
+      display: inline-block
+      font-size: 1.1em
+      line-height: 55px
+      text-decoration: none
+      width: 100%      

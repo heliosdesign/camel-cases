@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  CSS Media Queries |  Camel Cases</title>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:900' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="wrapper">
+    <h1 class="branding"><img src="/assets/svg/logo.svg" alt="Camel Cases"></h1>
+    <nav class="main-nav" role="navigation">
+      <ul>
+        <li class=""><a href="/">Articles</a></li>
+        <li class=""><a href="/snippets">Snippets</a></li>
+        <li class=""><a href="/about">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="site-content">
+  <div class="wrapper">
+    <article class="post cat-snippets">
+  <header class="post-header">
+    <h1 class="post-title">CSS Media Queries</h1>
+
+    <div class="post-meta">
+  <p class="publish-date">
+    Published: <span class="date">April 2, 2013</span>
+  </p>
+</div>
+  </header>
+  <section class="post-body">
+    <p>In responsive web design, media queries are invaluable. These are the media queries that I use on a regular basis.</p>
+<!--more-->
+<h2 id="screen_width">Screen Width:</h2>
+<table class='highlighttable'><tr><td class='linenos'><div class='linenodiv'><pre><code class='css'>1
+2
+3
+4
+5
+6
+7</code></pre></div></td><td class='code'><div class='highlight'><pre><span class='k'>@media</span> <span class='nt'>screen</span> <span class='nt'>and</span> <span class='o'>(</span><span class='nt'>min-width</span> <span class='o'>:</span> <span class='nt'>31</span><span class='nc'>.25em</span><span class='o'>)</span> <span class='p'>{</span>
+  <span class='c'>/* Engages when screen &gt; 31.25em */</span>
+<span class='p'>}</span>
+
+<span class='k'>@media</span> <span class='nt'>screen</span> <span class='nt'>and</span> <span class='o'>(</span><span class='nt'>max-width</span> <span class='o'>:</span> <span class='nt'>31</span><span class='nc'>.25em</span><span class='o'>)</span> <span class='p'>{</span>
+  <span class='c'>/* Engages when screen &lt; 31.25em */</span>
+<span class='p'>}</span>
+</pre></div>
+</td></tr></table>
+<h2 id="orientation">Orientation:</h2>
+<table class='highlighttable'><tr><td class='linenos'><div class='linenodiv'><pre><code class='css'>1
+2
+3
+4
+5
+6
+7</code></pre></div></td><td class='code'><div class='highlight'><pre><span class='k'>@media</span> <span class='nt'>screen</span> <span class='nt'>and</span> <span class='o'>(</span><span class='nt'>orientation</span> <span class='o'>:</span> <span class='nt'>landscape</span><span class='o'>)</span> <span class='p'>{</span>
+  <span class='c'>/* Engages when screen width is &gt; screen height */</span>
+<span class='p'>}</span>
+
+<span class='k'>@media</span> <span class='nt'>screen</span> <span class='nt'>and</span> <span class='o'>(</span><span class='nt'>orientation</span> <span class='o'>:</span> <span class='nt'>portrait</span><span class='o'>)</span> <span class='p'>{</span>
+  <span class='c'>/* Engages when screen height &gt; screen width */</span>
+<span class='p'>}</span>
+</pre></div>
+</td></tr></table>
+<h2 id="aspect_ratios">Aspect Ratios:</h2>
+<table class='highlighttable'><tr><td class='linenos'><div class='linenodiv'><pre><code class='css'>1
+2
+3</code></pre></div></td><td class='code'><div class='highlight'><pre><span class='k'>@media</span> <span class='nt'>screen</span> <span class='nt'>and</span> <span class='o'>(</span><span class='nt'>device-aspect-ratio</span><span class='o'>:</span> <span class='nt'>16</span><span class='o'>/</span><span class='nt'>9</span><span class='o'>)</span> <span class='p'>{</span>
+  <span class='c'>/* Engages when aspect ratio is at least 16/9 */</span>
+<span class='p'>}</span>
+</pre></div>
+</td></tr></table>
+<h2 id="retina">Retina:</h2>
+<table class='highlighttable'><tr><td class='linenos'><div class='linenodiv'><pre><code class='css'>1
+2
+3
+4</code></pre></div></td><td class='code'><div class='highlight'><pre><span class='k'>@media</span> <span class='nt'>screen</span> <span class='nt'>and</span> <span class='o'>(</span><span class='nt'>-webkit-min-device-pixel-ratio</span> <span class='o'>:</span> <span class='nt'>1</span><span class='nc'>.5</span><span class='o'>),</span>
+<span class='nt'>screen</span> <span class='nt'>and</span> <span class='o'>(</span><span class='nt'>min-device-pixel-ratio</span> <span class='o'>:</span> <span class='nt'>1</span><span class='nc'>.5</span><span class='o'>)</span> <span class='p'>{</span>
+  <span class='c'>/* Engages when pixel density is &gt; 1.5 */</span>
+<span class='p'>}</span>
+</pre></div>
+</td></tr></table>
+<p>If you want to see how you can detect media queries from your JavaScript have a look at the Camel Cases article: <a href="/detect-media-queries-in-javascript" title="Detect Media Queries in JavaScript">Detect Media Queries in JavaScript</a>.</p>
+  </div>
+  <footer class="post-footer">
+  </footer>
+</article>
+
+  </div>
+</div>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+      <p class="copyright">&copy; <a href="http://dsundy.com">dsundy.com</a> 2014.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

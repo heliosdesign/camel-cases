@@ -1,0 +1,23 @@
+@mixin breakpoint($point)
+
+  $bp-small: '(max-width: 500px)'
+  $bp-medium: '(min-width: 500px)'
+  $bp-large: '(min-width: 850px)'
+  $bp-full: '(min-width: 1000px)'
+
+  @if $point == small
+    @media #{$bp-small}
+      @content
+
+  @if $point == medium 
+    @media #{$bp-medium} 
+      @content
+  
+  @if $point == large 
+    @media #{$bp-large} 
+      @content
+  
+  @if $point == full 
+    @media #{$bp-full} 
+      @content
+  

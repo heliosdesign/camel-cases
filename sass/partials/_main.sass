@@ -1,0 +1,85 @@
+%title
+  font-size: 2.3em
+  text-align: center
+
+  a
+    color: inherit
+
+    &:hover
+      color: $accent
+
+/* =Page
+/*---------------------------------------------*/
+
+.page
+  margin: 4em 0 8em
+
+.page-title
+  @extend %title
+
+/* =Post
+/*---------------------------------------------*/
+
+.post,
+.post-preview
+  margin: 4em 0 8em
+
+  /* p:first-of-type:first-letter
+    color: $secondary
+    font-family: $font-headline
+    float: left
+    font-size: 2.95em
+    font-weight: 900
+    line-height: 100%
+    margin-bottom: 0
+    margin-top: 6px
+    padding-bottom: 0
+    padding-right: 8px */
+
+
+.post-title
+  @extend %title
+
+.post-excerpt
+  margin-bottom: 1.5em
+  //@include hyphenation
+
+.more-link
+  display: block
+  line-height: 3em
+  text-align: center
+
+  a
+    text-decoration: none
+
+
+@include breakpoint(medium)
+  span[data-typography]
+    color: $secondary
+    font-family: 'Source Sans Pro', Georgia
+    font-size: 1em
+    text-transform: uppercase
+    font-weight: bold
+      
+
+  span[data-typography]:before
+    content: attr(data-typography)
+    color: $tertiary
+    opacity: 0.2
+    font-family: $font-headline
+    font-size: 15em
+    line-height: 100%
+    margin-top: -70px
+    margin-left: -40px
+    padding-right: 0.1em
+    position: absolute
+    vertical-align: top
+    z-index: -1
+
+/* =Snippet post
+/*---------------------------------------------*/
+
+.post-preview.cat-snippets
+
+  .post-excerpt
+    text-align: center
