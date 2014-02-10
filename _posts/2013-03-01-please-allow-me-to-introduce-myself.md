@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Please Allow Me To Introduce Myself
+excerpt: A quick introduction, if I may, via some of the web developer applications and tools that I use all the time.
 categories: [Articles]
 tags: [apps, CodeKit, IcoMoon, iTerm, MAMP, setup, Slicy, SublimeText 2, VMWare Fusion]
 published: true

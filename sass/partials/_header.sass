@@ -1,24 +1,40 @@
+.top-bar
+  border-bottom: 1px solid $borders
+
+  @include breakpoint(medium)
+    height: 45px
+
 .branding
-  margin: 2em 0
-  text-align: center
+  float: left
+  font-family: $font-headline
+  font-size: 1.3em
+  font-weight: 400
+  line-height: 45px
+  text-transform: uppercase
+  margin: 0
+
+  @include breakpoint(small)
+    text-align: center
+    width: 100%
 
 .main-nav
   ul
-    border-bottom: 1px solid $borders
     font-family: $font-small-headline
-    margin: 1em 0
+    font-weight: 400
+    margin: 0
     padding: 0
-    text-align: center
+    text-align: right
+
+    @include breakpoint(small)
+      text-align: center
 
     @include breakpoint(medium)
       font-family: $font-headline
 
   li
     display: inline-block
-    height: 55px
-    margin: 0 5%
-    min-width: 100px
-    width: 10%
+    height: 45px
+    margin: 0 20px
 
     @include box-sizing(border-box)
 
@@ -30,15 +46,19 @@
       @include breakpoint(medium)
         border-bottom: 5px solid $tertiary
 
-    @include breakpoint(small)
-      border-top: 1px solid $borders
-      margin: 0
+    a
+      color: $text
+      display: inline-block
+      line-height: 45px
+      text-decoration: none
       width: 100%
 
-    a
-      color: $secondary
-      display: inline-block
-      font-size: 1.1em
-      line-height: 55px
-      text-decoration: none
-      width: 100%      
+      &:hover
+        color: $secondary
+
+.logo
+  margin: 2em 0
+  text-align: center
+
+  img 
+    max-width: 500px

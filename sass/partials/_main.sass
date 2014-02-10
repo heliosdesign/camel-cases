@@ -1,6 +1,9 @@
 %title
-  font-size: 2.3em
-  text-align: center
+  font-size: 2.2em
+  margin-top: 0
+
+  @include breakpoint(small)
+    font-size: 2em
 
   a
     color: inherit
@@ -22,45 +25,64 @@
 
 .post,
 .post-preview
-  margin: 4em 0 8em
+  margin: 4em 0
+  overflow: hidden
+  padding-bottom: 2em
 
-  /* p:first-of-type:first-letter
-    color: $secondary
-    font-family: $font-headline
+.post-preview
+  .post-title,
+  .post-excerpt
+    float: right
+    width: 80%
+
+    @include breakpoint(small)
+      float: none
+      width: auto
+
+  .post-excerpt
+    margin-top: 0
+
+  .post-meta
     float: left
-    font-size: 2.95em
-    font-weight: 900
-    line-height: 100%
-    margin-bottom: 0
-    margin-top: 6px
-    padding-bottom: 0
-    padding-right: 8px */
+    width: 20%
 
+    @include breakpoint(small)
+      float: none
+      width: auto
 
 .post-title
   @extend %title
 
 .post-excerpt
   margin-bottom: 1.5em
-  //@include hyphenation
+
+.post-body
+  p
+    font-size: 1.1em
+
+    &:first-child
+      font-size: 1.4em
+      margin-bottom: 1.5em
 
 .more-link
+  border-bottom: 1px solid $borders
+  float: left
   display: block
-  line-height: 3em
   text-align: center
+  width: 100%
 
   a
+    background: #fff
+    position: relative
+    top: 18px
     text-decoration: none
 
 
 @include breakpoint(medium)
   span[data-typography]
     color: $secondary
-    font-family: 'Source Sans Pro', Georgia
-    font-size: 1em
-    text-transform: uppercase
-    font-weight: bold
-      
+    font-family: $font-headline
+    font-size: 1em      
 
   span[data-typography]:before
     content: attr(data-typography)
@@ -80,6 +102,5 @@
 /*---------------------------------------------*/
 
 .post-preview.cat-snippets
-
   .post-excerpt
     text-align: center

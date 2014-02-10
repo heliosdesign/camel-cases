@@ -6,7 +6,8 @@ categories: [Articles]
 tags: [Emmet, snippets, Sublime Text 2]
 published: true
 ---
-Not too long ago the Zen Coding plugin for text editing applications was updated to Emmet. The change was mostly seamless, and I love some of the new features of Emmet (SASS and LESS support!), but my beloved code snippets were no longer accessible via the tab trigger. There was the possibility of disabling the tab trigger for Emmet, but it wasn’t worth sacrificing all that amazing time-saving greatness. The solution: convert my Sublime Text snippets into Emmet snippets. Here’s how.
+
+<span data-typography="N">Not too long ago</span> the Zen Coding plugin for text editing applications was updated to Emmet. The change was mostly seamless, and I love some of the new features of Emmet (SASS and LESS support!), but my beloved code snippets were no longer accessible via the tab trigger. There was the possibility of disabling the tab trigger for Emmet, but it wasn’t worth sacrificing all that amazing time-saving greatness. The solution: convert my Sublime Text snippets into Emmet snippets. Here’s how.
 <!--more-->
 
 First, copy the Emmet settings file into your user directory to prevent your changes being overwritten during Emmet updates. To do this go to `Sublime Text 2` &rarr; `Preferences` &rarr; `Browse Packages`. This will open a dialogue box with all your package files. In the Emmet folder copy Emmet.sublime-settings and paste it into the User folder (on the same level as the Emmet directory). Go ahead and open that copied file.

@@ -4,19 +4,26 @@
   <meta charset=utf-8 />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> {% if page.title %} {{ page.title }} | {% endif %} Camel Cases</title>
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:900' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="{{ site.url }}/css/style.css" />
 </head>
 <body>
 <header class="site-header">
+  <div class="top-bar">
+    <div class="wrapper">
+      <h1 class="branding"><a href="{{ site.url }}/">camelCases</a></h1>
+      <nav class="main-nav" role="navigation">
+        <ul>
+          <li class="{% if page.url == '/index.html' %}active{% endif %}"><a href="{{ site.url }}/">Articles</a></li>
+          <li class="{% if page.url == '/snippets/index.html' %}active{% endif %}"><a href="{{ site.url }}/snippets">Snippets</a></li>
+          <li class="{% if page.url == '/about/index.html' %}active{% endif %}"><a href="{{ site.url }}/about">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  
   <div class="wrapper">
-    <h1 class="branding"><img src="{{ site.url }}/assets/svg/logo.svg" alt="Camel Cases"></h1>
-    <nav class="main-nav" role="navigation">
-      <ul>
-        <li class="{% if page.url == '/index.html' %}active{% endif %}"><a href="{{ site.url }}/">Articles</a></li>
-        <li class="{% if page.url == '/snippets/index.html' %}active{% endif %}"><a href="{{ site.url }}/snippets">Snippets</a></li>
-        <li class="{% if page.url == '/about/index.html' %}active{% endif %}"><a href="{{ site.url }}/about">About</a></li>
-      </ul>
-    </nav>
+    <div class="logo"><img src="{{ site.url }}/assets/svg/logo.svg" alt="Camel Cases"></div>
   </div>
 </header>

@@ -4,20 +4,27 @@
   <meta charset=utf-8 />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>  How To Make Emmet Snippets |  Camel Cases</title>
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:900' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
 <header class="site-header">
+  <div class="top-bar">
+    <div class="wrapper">
+      <h1 class="branding"><a href="/">camelCases</a></h1>
+      <nav class="main-nav" role="navigation">
+        <ul>
+          <li class=""><a href="/">Articles</a></li>
+          <li class=""><a href="/snippets">Snippets</a></li>
+          <li class=""><a href="/about">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  
   <div class="wrapper">
-    <h1 class="branding"><img src="/assets/svg/logo.svg" alt="Camel Cases"></h1>
-    <nav class="main-nav" role="navigation">
-      <ul>
-        <li class=""><a href="/">Articles</a></li>
-        <li class=""><a href="/snippets">Snippets</a></li>
-        <li class=""><a href="/about">About</a></li>
-      </ul>
-    </nav>
+    <div class="logo"><img src="/assets/svg/logo.svg" alt="Camel Cases"></div>
   </div>
 </header>
 
@@ -34,8 +41,8 @@
 </div>
   </header>
   <section class="post-body">
-    <p>Not too long ago the Zen Coding plugin for text editing applications was updated to Emmet. The change was mostly seamless, and I love some of the new features of Emmet (SASS and LESS support!), but my beloved code snippets were no longer accessible via the tab trigger. There was the possibility of disabling the tab trigger for Emmet, but it wasn’t worth sacrificing all that amazing time-saving greatness. The solution: convert my Sublime Text snippets into Emmet snippets. Here’s how. <!--more--></p>
-
+    <p><span data-typography='N'>Not too long ago</span> the Zen Coding plugin for text editing applications was updated to Emmet. The change was mostly seamless, and I love some of the new features of Emmet (SASS and LESS support!), but my beloved code snippets were no longer accessible via the tab trigger. There was the possibility of disabling the tab trigger for Emmet, but it wasn’t worth sacrificing all that amazing time-saving greatness. The solution: convert my Sublime Text snippets into Emmet snippets. Here’s how.</p>
+<!--more-->
 <p>First, copy the Emmet settings file into your user directory to prevent your changes being overwritten during Emmet updates. To do this go to <code>Sublime Text 2</code> → <code>Preferences</code> → <code>Browse Packages</code>. This will open a dialogue box with all your package files. In the Emmet folder copy Emmet.sublime-settings and paste it into the User folder (on the same level as the Emmet directory). Go ahead and open that copied file.</p>
 <p class='aligncenter'>
   <img alt='Browse Packages' height='190' src='/assets/img/2013/03/browse.jpg' width='630' />

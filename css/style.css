@@ -711,40 +711,39 @@ body {
 /* line 17, ../sass/partials/_base.sass */
 h1, h2, h3 {
   color: #032c42;
-  font-family: "Arial Black", "Arial Bold", Helvetica, Gadget, sans-serif;
-  font-weight: bold; }
+  font-family: "Oswald", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400; }
   @media (min-width: 500px) {
     /* line 17, ../sass/partials/_base.sass */
     h1, h2, h3 {
-      font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-weight: 900; } }
-  /* line 26, ../sass/partials/_base.sass */
+      font-family: "Oswald", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; } }
+  /* line 27, ../sass/partials/_base.sass */
   h1 a, h2 a, h3 a {
     text-decoration: none;
     color: inherit; }
 
-/* line 30, ../sass/partials/_base.sass */
+/* line 31, ../sass/partials/_base.sass */
 p {
   color: #555555;
   font-size: 1.3em;
   line-height: 1.6em; }
 
-/* line 36, ../sass/partials/_base.sass */
+/* line 37, ../sass/partials/_base.sass */
 a:link {
   color: #bb2512; }
-/* line 39, ../sass/partials/_base.sass */
+/* line 40, ../sass/partials/_base.sass */
 a:visited {
   color: #032c42; }
-/* line 42, ../sass/partials/_base.sass */
+/* line 43, ../sass/partials/_base.sass */
 a:hover {
   text-decoration: none; }
 
-/* line 45, ../sass/partials/_base.sass */
+/* line 46, ../sass/partials/_base.sass */
 img {
   height: auto;
   max-width: 100%; }
 
-/* line 49, ../sass/partials/_base.sass */
+/* line 50, ../sass/partials/_base.sass */
 code {
   background: #f9f9f9;
   border: 1px solid #dddddd;
@@ -761,7 +760,7 @@ code {
 /* line 1, ../sass/partials/_modules.sass */
 .wrapper {
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 800px;
   width: 90%; }
 
 /* =Classes */
@@ -790,127 +789,218 @@ code {
 
 /* =Meta */
 /*--------------------------------------------- */
-/* line 27, ../sass/partials/_modules.sass */
+/* line 30, ../sass/partials/_modules.sass */
 .publish-date {
+  font-family: "Oswald", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.1em;
-  text-align: center;
-  font-style: italic; }
-  /* line 32, ../sass/partials/_modules.sass */
+  font-weight: 300; }
+  /* line 35, ../sass/partials/_modules.sass */
   .publish-date .date {
-    color: #bb2512; }
+    color: #bb2512;
+    font-style: regular; }
+
+/* line 39, ../sass/partials/_modules.sass */
+.block-date {
+  margin-top: 0;
+  color: #555555;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: normal; }
+  /* line 48, ../sass/partials/_modules.sass */
+  .block-date span {
+    display: block; }
+  /* line 51, ../sass/partials/_modules.sass */
+  .block-date .month {
+    letter-spacing: 1px; }
+  /* line 54, ../sass/partials/_modules.sass */
+  .block-date .day {
+    font-size: 2em;
+    color: #bc9312; }
+  @media (max-width: 500px) {
+    /* line 39, ../sass/partials/_modules.sass */
+    .block-date {
+      text-align: left;
+      font-size: 1.5em;
+      font-weight: 300;
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+      opacity: 1; }
+      /* line 64, ../sass/partials/_modules.sass */
+      .block-date span {
+        display: inline; }
+      /* line 67, ../sass/partials/_modules.sass */
+      .block-date .day {
+        color: #555555;
+        font-size: 1em; } }
 
 /* line 1, ../sass/partials/_header.sass */
-.branding {
-  margin: 2em 0;
-  text-align: center; }
-
-/* line 6, ../sass/partials/_header.sass */
-.main-nav ul {
-  border-bottom: 1px solid #dddddd;
-  font-family: "Arial Black", "Arial Bold", Helvetica, Gadget, sans-serif;
-  margin: 1em 0;
-  padding: 0;
-  text-align: center; }
+.top-bar {
+  border-bottom: 1px solid #dddddd; }
   @media (min-width: 500px) {
-    /* line 6, ../sass/partials/_header.sass */
+    /* line 1, ../sass/partials/_header.sass */
+    .top-bar {
+      height: 45px; } }
+
+/* line 7, ../sass/partials/_header.sass */
+.branding {
+  float: left;
+  font-family: "Oswald", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.3em;
+  font-weight: 400;
+  line-height: 45px;
+  text-transform: uppercase;
+  margin: 0; }
+  @media (max-width: 500px) {
+    /* line 7, ../sass/partials/_header.sass */
+    .branding {
+      text-align: center;
+      width: 100%; } }
+
+/* line 21, ../sass/partials/_header.sass */
+.main-nav ul {
+  font-family: "Oswald", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  text-align: right; }
+  @media (max-width: 500px) {
+    /* line 21, ../sass/partials/_header.sass */
     .main-nav ul {
-      font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; } }
-/* line 16, ../sass/partials/_header.sass */
+      text-align: center; } }
+  @media (min-width: 500px) {
+    /* line 21, ../sass/partials/_header.sass */
+    .main-nav ul {
+      font-family: "Oswald", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; } }
+/* line 34, ../sass/partials/_header.sass */
 .main-nav li {
   display: inline-block;
-  height: 55px;
-  margin: 0 5%;
-  min-width: 100px;
-  width: 10%;
+  height: 45px;
+  margin: 0 20px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
   @media (min-width: 500px) {
-    /* line 25, ../sass/partials/_header.sass */
+    /* line 41, ../sass/partials/_header.sass */
     .main-nav li.active {
       border-bottom: 5px solid #bb2512; } }
   @media (min-width: 500px) {
-    /* line 29, ../sass/partials/_header.sass */
+    /* line 45, ../sass/partials/_header.sass */
     .main-nav li:hover {
       border-bottom: 5px solid #bc9312; } }
-  @media (max-width: 500px) {
-    /* line 16, ../sass/partials/_header.sass */
-    .main-nav li {
-      border-top: 1px solid #dddddd;
-      margin: 0;
-      width: 100%; } }
-  /* line 38, ../sass/partials/_header.sass */
+  /* line 49, ../sass/partials/_header.sass */
   .main-nav li a {
-    color: #032c42;
+    color: #555555;
     display: inline-block;
-    font-size: 1.1em;
-    line-height: 55px;
+    line-height: 45px;
     text-decoration: none;
     width: 100%; }
+    /* line 56, ../sass/partials/_header.sass */
+    .main-nav li a:hover {
+      color: #032c42; }
+
+/* line 59, ../sass/partials/_header.sass */
+.logo {
+  margin: 2em 0;
+  text-align: center; }
+  /* line 63, ../sass/partials/_header.sass */
+  .logo img {
+    max-width: 500px; }
 
 /* line 1, ../sass/partials/_main.sass */
 .page-title, .post-title {
-  font-size: 2.3em;
-  text-align: center; }
-  /* line 5, ../sass/partials/_main.sass */
+  font-size: 2.2em;
+  margin-top: 0; }
+  @media (max-width: 500px) {
+    /* line 1, ../sass/partials/_main.sass */
+    .page-title, .post-title {
+      font-size: 2em; } }
+  /* line 8, ../sass/partials/_main.sass */
   .page-title a, .post-title a {
     color: inherit; }
-    /* line 8, ../sass/partials/_main.sass */
+    /* line 11, ../sass/partials/_main.sass */
     .page-title a:hover, .post-title a:hover {
       color: #bb2512; }
 
 /* =Page */
 /*--------------------------------------------- */
-/* line 14, ../sass/partials/_main.sass */
+/* line 17, ../sass/partials/_main.sass */
 .page {
   margin: 4em 0 8em; }
 
 /* =Post */
 /*--------------------------------------------- */
-/* line 23, ../sass/partials/_main.sass */
+/* line 26, ../sass/partials/_main.sass */
 .post,
 .post-preview {
-  margin: 4em 0 8em;
-  /* p:first-of-type:first-letter
-   * color: $secondary
-   * font-family: $font-headline
-   * float: left
-   * font-size: 2.95em
-   * font-weight: 900
-   * line-height: 100%
-   * margin-bottom: 0
-   * margin-top: 6px
-   * padding-bottom: 0
-   * padding-right: 8px */ }
+  margin: 4em 0;
+  overflow: hidden;
+  padding-bottom: 2em; }
 
-/* line 43, ../sass/partials/_main.sass */
+/* line 33, ../sass/partials/_main.sass */
+.post-preview .post-title,
+.post-preview .post-excerpt {
+  float: right;
+  width: 80%; }
+  @media (max-width: 500px) {
+    /* line 33, ../sass/partials/_main.sass */
+    .post-preview .post-title,
+    .post-preview .post-excerpt {
+      float: none;
+      width: auto; } }
+/* line 42, ../sass/partials/_main.sass */
+.post-preview .post-excerpt {
+  margin-top: 0; }
+/* line 45, ../sass/partials/_main.sass */
+.post-preview .post-meta {
+  float: left;
+  width: 20%; }
+  @media (max-width: 500px) {
+    /* line 45, ../sass/partials/_main.sass */
+    .post-preview .post-meta {
+      float: none;
+      width: auto; } }
+
+/* line 56, ../sass/partials/_main.sass */
 .post-excerpt {
   margin-bottom: 1.5em; }
 
-/* line 47, ../sass/partials/_main.sass */
+/* line 60, ../sass/partials/_main.sass */
+.post-body p {
+  font-size: 1.1em; }
+  /* line 63, ../sass/partials/_main.sass */
+  .post-body p:first-child {
+    font-size: 1.4em;
+    margin-bottom: 1.5em; }
+
+/* line 67, ../sass/partials/_main.sass */
 .more-link {
+  border-bottom: 1px solid #dddddd;
+  float: left;
   display: block;
-  line-height: 3em;
-  text-align: center; }
-  /* line 52, ../sass/partials/_main.sass */
+  text-align: center;
+  width: 100%; }
+  /* line 74, ../sass/partials/_main.sass */
   .more-link a {
+    background: white;
+    position: relative;
+    top: 18px;
     text-decoration: none; }
 
 @media (min-width: 500px) {
-  /* line 57, ../sass/partials/_main.sass */
+  /* line 82, ../sass/partials/_main.sass */
   span[data-typography] {
     color: #032c42;
-    font-family: "Source Sans Pro", Georgia;
-    font-size: 1em;
-    text-transform: uppercase;
-    font-weight: bold; }
+    font-family: "Oswald", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em; }
 
-  /* line 65, ../sass/partials/_main.sass */
+  /* line 87, ../sass/partials/_main.sass */
   span[data-typography]:before {
     content: attr(data-typography);
     color: #bc9312;
     opacity: 0.2;
-    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Oswald", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 15em;
     line-height: 100%;
     margin-top: -70px;
@@ -921,11 +1011,14 @@ code {
     z-index: -1; } }
 /* =Snippet post */
 /*--------------------------------------------- */
-/* line 84, ../sass/partials/_main.sass */
+/* line 105, ../sass/partials/_main.sass */
 .post-preview.cat-snippets .post-excerpt {
   text-align: center; }
 
-/* line 2, ../sass/partials/_footer.sass */
-.site-footer .copyright {
-  font-size: 0.9em;
-  font-style: italic; }
+/* line 1, ../sass/partials/_footer.sass */
+.site-footer {
+  border-top: 1px solid #dddddd; }
+  /* line 4, ../sass/partials/_footer.sass */
+  .site-footer .copyright {
+    font-size: 0.9em;
+    font-style: italic; }
