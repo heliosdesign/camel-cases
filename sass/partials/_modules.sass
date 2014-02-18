@@ -32,6 +32,9 @@
   font-size: 1.1em
   font-weight: 300
 
+  @include breakpoint(small)
+    font-family: $font-small-headline
+
   .date
     color: $accent
     font-style: regular
@@ -44,6 +47,9 @@
   text-transform: uppercase
   font-size: 2em
   font-weight: normal
+
+  @include breakpoint(small)
+    text-transform: none
 
   span
     display: block

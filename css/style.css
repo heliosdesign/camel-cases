@@ -1,5 +1,23 @@
 /* =Colours */
 /*--------------------------------------------- */
+@media (min-width: 500px) {
+  @font-face {
+    font-family: "Oswald";
+    font-style: normal;
+    font-weight: 300;
+    src: local("Oswald Light"), local("Oswald-Light"), url(http://themes.googleusercontent.com/static/fonts/oswald/v8/HqHm7BVC_nzzTui2lzQTDbO3LdcAZYWl9Si6vvxL-qU.woff) format("woff"); }
+
+  @font-face {
+    font-family: "Oswald";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Oswald Regular"), local("Oswald-Regular"), url(http://themes.googleusercontent.com/static/fonts/oswald/v8/qpy-UiLNKP-VfOdbcs6r6-vvDin1pK8aKteLpeZ5c0A.woff) format("woff"); }
+
+  @font-face {
+    font-family: "Oswald";
+    font-style: normal;
+    font-weight: 700;
+    src: local("Oswald Bold"), local("Oswald-Bold"), url(http://themes.googleusercontent.com/static/fonts/oswald/v8/bH7276GfdCjMjApa_dkG6bO3LdcAZYWl9Si6vvxL-qU.woff) format("woff"); } }
 /* Original code from normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ==========================================================================
  * HTML5 display definitions
@@ -711,7 +729,7 @@ body {
 /* line 17, ../sass/partials/_base.sass */
 h1, h2, h3 {
   color: #032c42;
-  font-family: "Oswald", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Georgia;
   font-weight: 400; }
   @media (min-width: 500px) {
     /* line 17, ../sass/partials/_base.sass */
@@ -794,12 +812,16 @@ code {
   font-family: "Oswald", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.1em;
   font-weight: 300; }
-  /* line 35, ../sass/partials/_modules.sass */
+  @media (max-width: 500px) {
+    /* line 30, ../sass/partials/_modules.sass */
+    .publish-date {
+      font-family: Georgia; } }
+  /* line 38, ../sass/partials/_modules.sass */
   .publish-date .date {
     color: #bb2512;
     font-style: regular; }
 
-/* line 39, ../sass/partials/_modules.sass */
+/* line 42, ../sass/partials/_modules.sass */
 .block-date {
   margin-top: 0;
   color: #555555;
@@ -809,28 +831,32 @@ code {
   text-transform: uppercase;
   font-size: 2em;
   font-weight: normal; }
-  /* line 48, ../sass/partials/_modules.sass */
+  @media (max-width: 500px) {
+    /* line 42, ../sass/partials/_modules.sass */
+    .block-date {
+      text-transform: none; } }
+  /* line 54, ../sass/partials/_modules.sass */
   .block-date span {
     display: block; }
-  /* line 51, ../sass/partials/_modules.sass */
+  /* line 57, ../sass/partials/_modules.sass */
   .block-date .month {
     letter-spacing: 1px; }
-  /* line 54, ../sass/partials/_modules.sass */
+  /* line 60, ../sass/partials/_modules.sass */
   .block-date .day {
     font-size: 2em;
     color: #bc9312; }
   @media (max-width: 500px) {
-    /* line 39, ../sass/partials/_modules.sass */
+    /* line 42, ../sass/partials/_modules.sass */
     .block-date {
       text-align: left;
       font-size: 1.5em;
       font-weight: 300;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
       opacity: 1; }
-      /* line 64, ../sass/partials/_modules.sass */
+      /* line 70, ../sass/partials/_modules.sass */
       .block-date span {
         display: inline; }
-      /* line 67, ../sass/partials/_modules.sass */
+      /* line 73, ../sass/partials/_modules.sass */
       .block-date .day {
         color: #555555;
         font-size: 1em; } }
@@ -860,7 +886,7 @@ code {
 
 /* line 21, ../sass/partials/_header.sass */
 .main-nav ul {
-  font-family: "Oswald", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Georgia;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -915,73 +941,74 @@ code {
   @media (max-width: 500px) {
     /* line 1, ../sass/partials/_main.sass */
     .page-title, .post-title {
-      font-size: 2em; } }
-  /* line 8, ../sass/partials/_main.sass */
+      font-size: 1.8em;
+      font-weight: bold; } }
+  /* line 9, ../sass/partials/_main.sass */
   .page-title a, .post-title a {
     color: inherit; }
-    /* line 11, ../sass/partials/_main.sass */
+    /* line 12, ../sass/partials/_main.sass */
     .page-title a:hover, .post-title a:hover {
       color: #bb2512; }
 
 /* =Page */
 /*--------------------------------------------- */
-/* line 17, ../sass/partials/_main.sass */
+/* line 18, ../sass/partials/_main.sass */
 .page {
   margin: 4em 0 8em; }
 
 /* =Post */
 /*--------------------------------------------- */
-/* line 26, ../sass/partials/_main.sass */
+/* line 27, ../sass/partials/_main.sass */
 .post,
 .post-preview {
   margin: 4em 0;
   overflow: hidden;
   padding-bottom: 2em; }
 
-/* line 33, ../sass/partials/_main.sass */
+/* line 34, ../sass/partials/_main.sass */
 .post-preview .post-title,
 .post-preview .post-excerpt {
   float: right;
   width: 80%; }
   @media (max-width: 500px) {
-    /* line 33, ../sass/partials/_main.sass */
+    /* line 34, ../sass/partials/_main.sass */
     .post-preview .post-title,
     .post-preview .post-excerpt {
       float: none;
       width: auto; } }
-/* line 42, ../sass/partials/_main.sass */
+/* line 43, ../sass/partials/_main.sass */
 .post-preview .post-excerpt {
   margin-top: 0; }
-/* line 45, ../sass/partials/_main.sass */
+/* line 46, ../sass/partials/_main.sass */
 .post-preview .post-meta {
   float: left;
   width: 20%; }
   @media (max-width: 500px) {
-    /* line 45, ../sass/partials/_main.sass */
+    /* line 46, ../sass/partials/_main.sass */
     .post-preview .post-meta {
       float: none;
       width: auto; } }
 
-/* line 56, ../sass/partials/_main.sass */
+/* line 57, ../sass/partials/_main.sass */
 .post-excerpt {
   margin-bottom: 1.5em; }
 
-/* line 60, ../sass/partials/_main.sass */
+/* line 61, ../sass/partials/_main.sass */
 .post-body p {
   font-size: 1.1em; }
-  /* line 63, ../sass/partials/_main.sass */
+  /* line 64, ../sass/partials/_main.sass */
   .post-body p:first-child {
     font-size: 1.4em;
     margin-bottom: 1.5em; }
 
-/* line 67, ../sass/partials/_main.sass */
+/* line 68, ../sass/partials/_main.sass */
 .more-link {
   border-bottom: 1px solid #dddddd;
   float: left;
   display: block;
   text-align: center;
   width: 100%; }
-  /* line 74, ../sass/partials/_main.sass */
+  /* line 75, ../sass/partials/_main.sass */
   .more-link a {
     background: white;
     position: relative;
@@ -989,13 +1016,13 @@ code {
     text-decoration: none; }
 
 @media (min-width: 500px) {
-  /* line 82, ../sass/partials/_main.sass */
+  /* line 83, ../sass/partials/_main.sass */
   span[data-typography] {
     color: #032c42;
     font-family: "Oswald", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1em; }
 
-  /* line 87, ../sass/partials/_main.sass */
+  /* line 88, ../sass/partials/_main.sass */
   span[data-typography]:before {
     content: attr(data-typography);
     color: #bc9312;
@@ -1011,7 +1038,7 @@ code {
     z-index: -1; } }
 /* =Snippet post */
 /*--------------------------------------------- */
-/* line 105, ../sass/partials/_main.sass */
+/* line 106, ../sass/partials/_main.sass */
 .post-preview.cat-snippets .post-excerpt {
   text-align: center; }
 
