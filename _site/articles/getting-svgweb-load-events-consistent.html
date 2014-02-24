@@ -5,12 +5,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>  Getting SVGWeb Load Events to Fire Consistently |  Camel Cases</title>
   <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Place this data between the <head> tags of your website -->
+  <meta name="description" content="Discussing the strange (and not so strange) cases in the world of web development and design." />
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@camelCases">
+  <meta name="twitter:title" content=" Getting SVGWeb Load Events to Fire Consistently |  Camel Cases">
+  <meta name="twitter:description" content="Discussing the strange (and not so strange) cases in the world of web development and design.">
+  <meta name="twitter:creator" content="@camelCases">
+  <!-- Twitter Summary card images must be at least 200x200px -->
+  <meta name="twitter:image" content="/assets/img/branding/logo-400.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content=" Getting SVGWeb Load Events to Fire Consistently |  Camel Cases" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="/articles/getting-svgweb-load-events-consistent.html" />
+  <meta property="og:image" content="/assets/img/branding/logo-400.jpg" />
+  <meta property="og:description" content="Discussing the strange (and not so strange) cases in the world of web development and design." /> 
+  <meta property="og:site_name" content="Camel Cases" />
+
 </head>
 <body>
 <header class="site-header">
   <div class="top-bar">
     <div class="wrapper">
-      <h1 class="branding"><a href="/">camelCases</a></h1>
+      <h1 class="branding"><a href="/"><img src="/assets/svg/branding/wordmark.svg" alt="Camel Cases"></a></h1>
       <nav class="main-nav" role="navigation">
         <ul>
           <li class=""><a href="/">Articles</a></li>
@@ -22,22 +43,23 @@
   </div>
   
   <div class="wrapper">
-    <div class="logo"><img src="/assets/svg/logo.svg" alt="Camel Cases"></div>
+    <div class="logo"><a href="/"><img src="/assets/svg/branding/logo.svg" alt="Camel Cases"></a></div>
   </div>
 </header>
 
 <div class="site-content">
   <div class="wrapper">
     <article class="post cat-articles">
+  
   <header class="post-header">
     <h1 class="post-title">Getting SVGWeb Load Events to Fire Consistently</h1>
-
     <div class="post-meta">
   <p class="publish-date">
     Published: <span class="date">April 13, 2013</span>
   </p>
 </div>
   </header>
+
   <section class="post-body">
     <p><span data-typography='T'>The audience for this post</span> will definitely be small, but hopefully I alleviate at least one person’s frustration. I’ve used SVGWeb on a few different projects now. Its biggest advantage is that it renders your SVG creations in non-capable browsers with Flash. I’ve had very little trouble with the library except in one area: getting SVGWeb load events to fire consistently in different browsers while using an embedded SVG files.</p>
 
@@ -98,9 +120,14 @@
 <p>From there you’re good to go.</p>
 
 <p>If you think that this seems convoluted and hacky and gross, that’s because it is. But, like I said, I’ve tried it pretty much every other way with no <em>consistent</em> success.</p>
-  </div>
+  </section>
+
+  
   <footer class="post-footer">
+    <p>If you would like to discuss this article tweet <a href="https://twitter.com/camelCases">@camelCases</a> with the hashtag <strong>#ccLoadSVGWeb</strong>.]
   </footer>
+  
+
 </article>
 
   </div>

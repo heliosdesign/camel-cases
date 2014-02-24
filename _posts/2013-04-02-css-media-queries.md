@@ -5,21 +5,20 @@ categories: [Snippets]
 tags: [CSS, media queries, responsive web design]
 published: true
 ---
-In responsive web design, media queries are invaluable. These are the media queries that I use on a regular basis.
 
-<!--more-->
-
-## Screen Width:
+## Screen Widths:
 
 {% highlight css linenos=table %}
-@media screen and (min-width : 31.25em) {
-  /* Engages when screen > 31.25em */
+@media screen and (min-width : 500px) {
+  /* Engages when screen > 500px */
 }
 
-@media screen and (max-width : 31.25em) {
-  /* Engages when screen < 31.25em */
+@media screen and (max-width : 500px) {
+  /* Engages when screen < 500px */
 }
 {% endhighlight %}
+
+<!--more-->
 
 ## Orientation:
 

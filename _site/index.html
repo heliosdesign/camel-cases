@@ -5,12 +5,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>  Camel Cases</title>
   <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Place this data between the <head> tags of your website -->
+  <meta name="description" content="Discussing the strange (and not so strange) cases in the world of web development and design." />
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@camelCases">
+  <meta name="twitter:title" content=" Camel Cases">
+  <meta name="twitter:description" content="Discussing the strange (and not so strange) cases in the world of web development and design.">
+  <meta name="twitter:creator" content="@camelCases">
+  <!-- Twitter Summary card images must be at least 200x200px -->
+  <meta name="twitter:image" content="/assets/img/branding/logo-400.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content=" Camel Cases" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="/index.html" />
+  <meta property="og:image" content="/assets/img/branding/logo-400.jpg" />
+  <meta property="og:description" content="Discussing the strange (and not so strange) cases in the world of web development and design." /> 
+  <meta property="og:site_name" content="Camel Cases" />
+
 </head>
 <body>
 <header class="site-header">
   <div class="top-bar">
     <div class="wrapper">
-      <h1 class="branding"><a href="/">camelCases</a></h1>
+      <h1 class="branding"><a href="/"><img src="/assets/svg/branding/wordmark.svg" alt="Camel Cases"></a></h1>
       <nav class="main-nav" role="navigation">
         <ul>
           <li class="active"><a href="/">Articles</a></li>
@@ -22,14 +43,39 @@
   </div>
   
   <div class="wrapper">
-    <div class="logo"><img src="/assets/svg/logo.svg" alt="Camel Cases"></div>
+    <div class="logo"><a href="/"><img src="/assets/svg/branding/logo.svg" alt="Camel Cases"></a></div>
   </div>
 </header>
 
 <div class="site-content">
   <div class="wrapper">
     
-  <article class="post-preview">
+  <article class="post-preview article-preview">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a href="/articles/static.html">
+          Static
+        </a>
+      </h1>
+      <div class="post-meta">
+        <p class="publish-date block-date">
+          <span class="month">Jan</span>
+          <span class="day">14</span>
+          <span class="year">2014</span>
+        </p>
+      </div>
+    </header>
+    
+    <div class="post-body">
+      <p class="post-excerpt">In which I explain why and how I moved this blog to a static site generator (namely Jekyll). And if you’re thinking about doing it, it might be a lot easier than you think.</p>
+    </div>
+    
+    <p class="more-link">
+  <a href="/articles/static.html" class="btn">Read Article</a>
+</p>
+  </article>
+
+  <article class="post-preview article-preview">
     <header class="post-header">
       <h1 class="post-title">
         <a href="/articles/getting-svgweb-load-events-consistent.html">
@@ -54,7 +100,7 @@
 </p>
   </article>
 
-  <article class="post-preview">
+  <article class="post-preview article-preview">
     <header class="post-header">
       <h1 class="post-title">
         <a href="/articles/how-to-make-emmet-snippets.html">
@@ -79,7 +125,7 @@
 </p>
   </article>
 
-  <article class="post-preview">
+  <article class="post-preview article-preview">
     <header class="post-header">
       <h1 class="post-title">
         <a href="/articles/detect-media-queries-in-javascript.html">
@@ -104,7 +150,7 @@
 </p>
   </article>
 
-  <article class="post-preview">
+  <article class="post-preview article-preview">
     <header class="post-header">
       <h1 class="post-title">
         <a href="/articles/box-sizing-for-all-elements.html">
@@ -129,7 +175,7 @@
 </p>
   </article>
 
-  <article class="post-preview">
+  <article class="post-preview article-preview">
     <header class="post-header">
       <h1 class="post-title">
         <a href="/articles/please-allow-me-to-introduce-myself.html">

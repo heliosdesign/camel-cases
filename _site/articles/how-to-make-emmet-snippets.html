@@ -5,12 +5,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>  How To Make Emmet Snippets |  Camel Cases</title>
   <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Place this data between the <head> tags of your website -->
+  <meta name="description" content="Discussing the strange (and not so strange) cases in the world of web development and design." />
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@camelCases">
+  <meta name="twitter:title" content=" How To Make Emmet Snippets |  Camel Cases">
+  <meta name="twitter:description" content="Discussing the strange (and not so strange) cases in the world of web development and design.">
+  <meta name="twitter:creator" content="@camelCases">
+  <!-- Twitter Summary card images must be at least 200x200px -->
+  <meta name="twitter:image" content="/assets/img/branding/logo-400.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content=" How To Make Emmet Snippets |  Camel Cases" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="/articles/how-to-make-emmet-snippets.html" />
+  <meta property="og:image" content="/assets/img/branding/logo-400.jpg" />
+  <meta property="og:description" content="Discussing the strange (and not so strange) cases in the world of web development and design." /> 
+  <meta property="og:site_name" content="Camel Cases" />
+
 </head>
 <body>
 <header class="site-header">
   <div class="top-bar">
     <div class="wrapper">
-      <h1 class="branding"><a href="/">camelCases</a></h1>
+      <h1 class="branding"><a href="/"><img src="/assets/svg/branding/wordmark.svg" alt="Camel Cases"></a></h1>
       <nav class="main-nav" role="navigation">
         <ul>
           <li class=""><a href="/">Articles</a></li>
@@ -22,22 +43,23 @@
   </div>
   
   <div class="wrapper">
-    <div class="logo"><img src="/assets/svg/logo.svg" alt="Camel Cases"></div>
+    <div class="logo"><a href="/"><img src="/assets/svg/branding/logo.svg" alt="Camel Cases"></a></div>
   </div>
 </header>
 
 <div class="site-content">
   <div class="wrapper">
     <article class="post cat-articles">
+  
   <header class="post-header">
     <h1 class="post-title">How To Make Emmet Snippets</h1>
-
     <div class="post-meta">
   <p class="publish-date">
     Published: <span class="date">March 23, 2013</span>
   </p>
 </div>
   </header>
+
   <section class="post-body">
     <p><span data-typography='N'>Not too long ago</span> the Zen Coding plugin for text editing applications was updated to Emmet. The change was mostly seamless, and I love some of the new features of Emmet (SASS and LESS support!), but my beloved code snippets were no longer accessible via the tab trigger. There was the possibility of disabling the tab trigger for Emmet, but it wasn’t worth sacrificing all that amazing time-saving greatness. The solution: convert my Sublime Text snippets into Emmet snippets. Here’s how.</p>
 <!--more-->
@@ -78,9 +100,10 @@
 <p>A couple quick notes on the structure here. <code>&quot;css&quot;</code> dictates which type of document this snippet works in. <code>&quot;comment&quot;</code> is the tab trigger that you define. <code>${}</code> is a tabstop, the word <code>Section</code> is a placeholder for the tabstop and the number <code>1:</code> communicates in which order the tabstops get highlighted (I don’t actually need it in this comment since there is only one tabstop). Lastly, because this comment spans many lines I needed to include a line break. In JSON syntax we can’t just hit return and go to the next line, we have to use <code>\n</code>.</p>
 
 <p>Happy snippeting!</p>
-  </div>
-  <footer class="post-footer">
-  </footer>
+  </section>
+
+  
+
 </article>
 
   </div>

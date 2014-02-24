@@ -5,12 +5,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> {% if page.title %} {{ page.title }} | {% endif %} Camel Cases</title>
   <link rel="stylesheet" href="{{ site.url }}/css/style.css" />
+
+  <!-- Place this data between the <head> tags of your website -->
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Discussing the strange (and not so strange) cases in the world of web development and design.{% endif %}" />
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@camelCases">
+  <meta name="twitter:title" content="{% if page.title %} {{ page.title }} | {% endif %} Camel Cases">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}Discussing the strange (and not so strange) cases in the world of web development and design.{% endif %}">
+  <meta name="twitter:creator" content="@camelCases">
+  <!-- Twitter Summary card images must be at least 200x200px -->
+  <meta name="twitter:image" content="{{ site.url }}/assets/img/branding/logo-400.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="{% if page.title %} {{ page.title }} | {% endif %} Camel Cases" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="{{ page.url }}" />
+  <meta property="og:image" content="{{ site.url }}/assets/img/branding/logo-400.jpg" />
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}Discussing the strange (and not so strange) cases in the world of web development and design.{% endif %}" /> 
+  <meta property="og:site_name" content="Camel Cases" />
+
 </head>
 <body>
 <header class="site-header">
   <div class="top-bar">
     <div class="wrapper">
-      <h1 class="branding"><a href="{{ site.url }}/">camelCases</a></h1>
+      <h1 class="branding"><a href="{{ site.url }}/"><img src="{{ site.url }}/assets/svg/branding/wordmark.svg" alt="Camel Cases"></a></h1>
       <nav class="main-nav" role="navigation">
         <ul>
           <li class="{% if page.url == '/index.html' %}active{% endif %}"><a href="{{ site.url }}/">Articles</a></li>
@@ -22,6 +43,6 @@
   </div>
   
   <div class="wrapper">
-    <div class="logo"><img src="{{ site.url }}/assets/svg/logo.svg" alt="Camel Cases"></div>
+    <div class="logo"><a href="{{ site.url }}/"><img src="{{ site.url }}/assets/svg/branding/logo.svg" alt="Camel Cases"></a></div>
   </div>
 </header>

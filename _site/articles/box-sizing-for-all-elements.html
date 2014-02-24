@@ -5,12 +5,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>  Box-Sizing For All |  Camel Cases</title>
   <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Place this data between the <head> tags of your website -->
+  <meta name="description" content="Discussing the strange (and not so strange) cases in the world of web development and design." />
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@camelCases">
+  <meta name="twitter:title" content=" Box-Sizing For All |  Camel Cases">
+  <meta name="twitter:description" content="Discussing the strange (and not so strange) cases in the world of web development and design.">
+  <meta name="twitter:creator" content="@camelCases">
+  <!-- Twitter Summary card images must be at least 200x200px -->
+  <meta name="twitter:image" content="/assets/img/branding/logo-400.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content=" Box-Sizing For All |  Camel Cases" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="/articles/box-sizing-for-all-elements.html" />
+  <meta property="og:image" content="/assets/img/branding/logo-400.jpg" />
+  <meta property="og:description" content="Discussing the strange (and not so strange) cases in the world of web development and design." /> 
+  <meta property="og:site_name" content="Camel Cases" />
+
 </head>
 <body>
 <header class="site-header">
   <div class="top-bar">
     <div class="wrapper">
-      <h1 class="branding"><a href="/">camelCases</a></h1>
+      <h1 class="branding"><a href="/"><img src="/assets/svg/branding/wordmark.svg" alt="Camel Cases"></a></h1>
       <nav class="main-nav" role="navigation">
         <ul>
           <li class=""><a href="/">Articles</a></li>
@@ -22,22 +43,23 @@
   </div>
   
   <div class="wrapper">
-    <div class="logo"><img src="/assets/svg/logo.svg" alt="Camel Cases"></div>
+    <div class="logo"><a href="/"><img src="/assets/svg/branding/logo.svg" alt="Camel Cases"></a></div>
   </div>
 </header>
 
 <div class="site-content">
   <div class="wrapper">
     <article class="post cat-articles">
+  
   <header class="post-header">
     <h1 class="post-title">Box-Sizing For All</h1>
-
     <div class="post-meta">
   <p class="publish-date">
     Published: <span class="date">March 6, 2013</span>
   </p>
 </div>
   </header>
+
   <section class="post-body">
     <p>Dealing with padding and borders can be tricky—especially when you’re working in a fluid layout (as you should be). Enter box-sizing, which adds borders and padding to the inside of the element.<!--more--> Here’s how to add the border-box box model to all elements on a page:</p>
 <table class='highlighttable'><tr><td class='linenos'><div class='linenodiv'><pre><code class='css'>1
@@ -74,9 +96,10 @@
 </pre></div>
 </td></tr></table>
 <p>Is this safe to use? <a href="http://paulirish.com/2012/box-sizing-border-box-ftw">Paul Irish says we can use it</a> and that’s good enough for me. Here’s the <a href="http://caniuse.com/#search=Box-sizing">caniuse.com compatibility chart</a> (hint: IE8+).</p>
-  </div>
-  <footer class="post-footer">
-  </footer>
+  </section>
+
+  
+
 </article>
 
   </div>

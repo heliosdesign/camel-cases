@@ -5,12 +5,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>  CSS Media Queries |  Camel Cases</title>
   <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Place this data between the <head> tags of your website -->
+  <meta name="description" content="Discussing the strange (and not so strange) cases in the world of web development and design." />
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@camelCases">
+  <meta name="twitter:title" content=" CSS Media Queries |  Camel Cases">
+  <meta name="twitter:description" content="Discussing the strange (and not so strange) cases in the world of web development and design.">
+  <meta name="twitter:creator" content="@camelCases">
+  <!-- Twitter Summary card images must be at least 200x200px -->
+  <meta name="twitter:image" content="/assets/img/branding/logo-400.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content=" CSS Media Queries |  Camel Cases" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="/snippets/css-media-queries.html" />
+  <meta property="og:image" content="/assets/img/branding/logo-400.jpg" />
+  <meta property="og:description" content="Discussing the strange (and not so strange) cases in the world of web development and design." /> 
+  <meta property="og:site_name" content="Camel Cases" />
+
 </head>
 <body>
 <header class="site-header">
   <div class="top-bar">
     <div class="wrapper">
-      <h1 class="branding"><a href="/">camelCases</a></h1>
+      <h1 class="branding"><a href="/"><img src="/assets/svg/branding/wordmark.svg" alt="Camel Cases"></a></h1>
       <nav class="main-nav" role="navigation">
         <ul>
           <li class=""><a href="/">Articles</a></li>
@@ -22,41 +43,40 @@
   </div>
   
   <div class="wrapper">
-    <div class="logo"><img src="/assets/svg/logo.svg" alt="Camel Cases"></div>
+    <div class="logo"><a href="/"><img src="/assets/svg/branding/logo.svg" alt="Camel Cases"></a></div>
   </div>
 </header>
 
 <div class="site-content">
   <div class="wrapper">
     <article class="post cat-snippets">
+  
   <header class="post-header">
     <h1 class="post-title">CSS Media Queries</h1>
-
     <div class="post-meta">
   <p class="publish-date">
     Published: <span class="date">April 2, 2013</span>
   </p>
 </div>
   </header>
+
   <section class="post-body">
-    <p>In responsive web design, media queries are invaluable. These are the media queries that I use on a regular basis.</p>
-<!--more-->
-<h2 id="screen_width">Screen Width:</h2>
+    <h2 id="screen_widths">Screen Widths:</h2>
 <table class='highlighttable'><tr><td class='linenos'><div class='linenodiv'><pre><code class='css'>1
 2
 3
 4
 5
 6
-7</code></pre></div></td><td class='code'><div class='highlight'><pre><span class='k'>@media</span> <span class='nt'>screen</span> <span class='nt'>and</span> <span class='o'>(</span><span class='nt'>min-width</span> <span class='o'>:</span> <span class='nt'>31</span><span class='nc'>.25em</span><span class='o'>)</span> <span class='p'>{</span>
-  <span class='c'>/* Engages when screen &gt; 31.25em */</span>
+7</code></pre></div></td><td class='code'><div class='highlight'><pre><span class='k'>@media</span> <span class='nt'>screen</span> <span class='nt'>and</span> <span class='o'>(</span><span class='nt'>min-width</span> <span class='o'>:</span> <span class='nt'>500px</span><span class='o'>)</span> <span class='p'>{</span>
+  <span class='c'>/* Engages when screen &gt; 500px */</span>
 <span class='p'>}</span>
 
-<span class='k'>@media</span> <span class='nt'>screen</span> <span class='nt'>and</span> <span class='o'>(</span><span class='nt'>max-width</span> <span class='o'>:</span> <span class='nt'>31</span><span class='nc'>.25em</span><span class='o'>)</span> <span class='p'>{</span>
-  <span class='c'>/* Engages when screen &lt; 31.25em */</span>
+<span class='k'>@media</span> <span class='nt'>screen</span> <span class='nt'>and</span> <span class='o'>(</span><span class='nt'>max-width</span> <span class='o'>:</span> <span class='nt'>500px</span><span class='o'>)</span> <span class='p'>{</span>
+  <span class='c'>/* Engages when screen &lt; 500px */</span>
 <span class='p'>}</span>
 </pre></div>
-</td></tr></table>
+</td></tr></table><!--more-->
 <h2 id="orientation">Orientation:</h2>
 <table class='highlighttable'><tr><td class='linenos'><div class='linenodiv'><pre><code class='css'>1
 2
@@ -92,9 +112,10 @@
 </pre></div>
 </td></tr></table>
 <p>If you want to see how you can detect media queries from your JavaScript have a look at the Camel Cases article: <a href="/detect-media-queries-in-javascript" title="Detect Media Queries in JavaScript">Detect Media Queries in JavaScript</a>.</p>
-  </div>
-  <footer class="post-footer">
-  </footer>
+  </section>
+
+  
+
 </article>
 
   </div>

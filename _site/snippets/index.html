@@ -5,12 +5,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>  Camel Cases</title>
   <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Place this data between the <head> tags of your website -->
+  <meta name="description" content="Discussing the strange (and not so strange) cases in the world of web development and design." />
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@camelCases">
+  <meta name="twitter:title" content=" Camel Cases">
+  <meta name="twitter:description" content="Discussing the strange (and not so strange) cases in the world of web development and design.">
+  <meta name="twitter:creator" content="@camelCases">
+  <!-- Twitter Summary card images must be at least 200x200px -->
+  <meta name="twitter:image" content="/assets/img/branding/logo-400.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content=" Camel Cases" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="/snippets/index.html" />
+  <meta property="og:image" content="/assets/img/branding/logo-400.jpg" />
+  <meta property="og:description" content="Discussing the strange (and not so strange) cases in the world of web development and design." /> 
+  <meta property="og:site_name" content="Camel Cases" />
+
 </head>
 <body>
 <header class="site-header">
   <div class="top-bar">
     <div class="wrapper">
-      <h1 class="branding"><a href="/">camelCases</a></h1>
+      <h1 class="branding"><a href="/"><img src="/assets/svg/branding/wordmark.svg" alt="Camel Cases"></a></h1>
       <nav class="main-nav" role="navigation">
         <ul>
           <li class=""><a href="/">Articles</a></li>
@@ -22,7 +43,7 @@
   </div>
   
   <div class="wrapper">
-    <div class="logo"><img src="/assets/svg/logo.svg" alt="Camel Cases"></div>
+    <div class="logo"><a href="/"><img src="/assets/svg/branding/logo.svg" alt="Camel Cases"></a></div>
   </div>
 </header>
 
@@ -37,9 +58,24 @@
         </a>
       </h1>
     </header>
-    <p class="post-excerpt"><p>In responsive web design, media queries are invaluable. These are the media queries that I use on a regular basis.</p></p>
+    <p class="post-excerpt"><h2 id="screen_widths">Screen Widths:</h2>
+<table class='highlighttable'><tr><td class='linenos'><div class='linenodiv'><pre><code class='css'>1
+2
+3
+4
+5
+6
+7</code></pre></div></td><td class='code'><div class='highlight'><pre><span class='k'>@media</span> <span class='nt'>screen</span> <span class='nt'>and</span> <span class='o'>(</span><span class='nt'>min-width</span> <span class='o'>:</span> <span class='nt'>500px</span><span class='o'>)</span> <span class='p'>{</span>
+  <span class='c'>/* Engages when screen &gt; 500px */</span>
+<span class='p'>}</span>
+
+<span class='k'>@media</span> <span class='nt'>screen</span> <span class='nt'>and</span> <span class='o'>(</span><span class='nt'>max-width</span> <span class='o'>:</span> <span class='nt'>500px</span><span class='o'>)</span> <span class='p'>{</span>
+  <span class='c'>/* Engages when screen &lt; 500px */</span>
+<span class='p'>}</span>
+</pre></div>
+</td></tr></table></p>
     <p class="more-link">
-      <a href="/snippets/css-media-queries.html" class="btn">Snippet</a>
+      <a href="/snippets/css-media-queries.html" class="btn">Read More</a>
     </p>
   </article>
 
@@ -60,7 +96,7 @@
 </pre></div>
 </td></tr></table></p>
     <p class="more-link">
-      <a href="/snippets/css-text-shadows.html" class="btn">Snippet</a>
+      <a href="/snippets/css-text-shadows.html" class="btn">Read More</a>
     </p>
   </article>
 
@@ -84,7 +120,7 @@
 </pre></div>
 </td></tr></table></p>
     <p class="more-link">
-      <a href="/snippets/html5-video-tag.html" class="btn">Snippet</a>
+      <a href="/snippets/html5-video-tag.html" class="btn">Read More</a>
     </p>
   </article>
 
@@ -106,7 +142,7 @@
 </pre></div>
 </td></tr></table></p>
     <p class="more-link">
-      <a href="/snippets/html5-audio-element.html" class="btn">Snippet</a>
+      <a href="/snippets/html5-audio-element.html" class="btn">Read More</a>
     </p>
   </article>
 

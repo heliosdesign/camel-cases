@@ -4,6 +4,7 @@ title: Getting SVGWeb Load Events to Fire Consistently
 excerpt: SVGWeb is an awesome way to embed complicated interactive SVG elements into your web site. But if it’s not initialized properly you could end up with a big fat error instead.
 categories: [Articles]
 tags: [Flash, JavaScript, Load Event, SVG, SVGWeb]
+hashtag: ccLoadSVGWeb
 status: publish
 type: post
 published: true
