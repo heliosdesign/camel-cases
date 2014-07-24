@@ -1,3 +1,8 @@
+# Redirects from the old Camel Cases site
+Redirect 301 /how-to-make-emmet-snippets http://camelcas.es/articles/how-to-make-emmet-snippets.html
+Redirect 301 /detect-media-queries-in-javascript http://camelcas.es/articles/detect-media-queries-in-javascript.html
+Redirect 301 /getting-svgweb-load-events-consistent http://camelcas.es/articles/getting-svgweb-load-events-consistent.html
+
 # ------------------------------------------------------------------------------
 # | Web fonts access                                                           |
 # ------------------------------------------------------------------------------

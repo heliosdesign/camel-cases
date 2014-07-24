@@ -6,12 +6,12 @@
   },
   "version": "2.0.0",
   "devDependencies": {
-    "gulp-util": "~2.2.12",
-    "gulp": "~3.4.0",
-    "gulp-compass": "~1.0.9",
+    "bower": "~1.2.8",
     "connect-livereload": "~0.3.2",
-    "tiny-lr": "0.0.5",
+    "gulp": "^3.8.6",
+    "gulp-compass": "~1.0.9",
     "gulp-livereload": "~0.2.0",
-    "bower": "~1.2.8"
+    "gulp-util": "~2.2.12",
+    "tiny-lr": "0.0.5"
   }
 }
